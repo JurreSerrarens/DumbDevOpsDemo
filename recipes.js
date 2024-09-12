@@ -3,6 +3,7 @@ $(document).ready(function () {
         $.ajax({
             url: `https://api.spoonacular.com/recipes/complexSearch?query=${$('#searchValue').val()}&apiKey=c25e2d349ba842ee8186ded1ff30b942`
         }).done(function (data) {
+            $('.searchResults').empty()
             data.results.forEach(recipe => {
                 const searchResults = document.querySelector('.searchResults');
 
